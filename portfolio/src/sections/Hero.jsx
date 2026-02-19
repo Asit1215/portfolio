@@ -45,8 +45,6 @@ export default function Hero() {
             sequence={[
               "Hi, I'm Asit Mandi",
               1500,
-              "Hi, I'm a Full Stack Developer",
-              1500,
               "Hi, I'm a Software Developer",
               1500,
               "Hi, I'm Asit Mandi",
