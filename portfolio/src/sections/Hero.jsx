@@ -65,7 +65,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="mt-4 text-lg text-slate-400 md:text-xl"
         >
-          Full Stack Developer | Software Developer | Node.js | React.js | MongoDB
+           Software Developer | Node.js | React.js | Express.js | MongoDB | Python | Django |
         </motion.p>
 
         <motion.div
