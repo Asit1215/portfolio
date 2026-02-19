@@ -34,7 +34,7 @@ export default function Navbar() {
           to="/"
           className="font-sans text-xl font-bold text-white transition hover:opacity-90 md:text-2xl"
         >
-          <span className="gradient-text tracking-wide">Asit</span>
+          <span className="gradient-text tracking-wide">AsitMD</span>
         </Link>
 
         <ul className="hidden items-center gap-8 md:flex">

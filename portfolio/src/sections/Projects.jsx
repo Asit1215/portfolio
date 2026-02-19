@@ -2,33 +2,13 @@ import { motion } from 'framer-motion'
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'Full-featured online store with cart, checkout, and admin dashboard. Built with MERN stack and Stripe integration.',
+    title: 'Movie ticket booking Web Application',
+    description: 'Developed a full-stack movie ticket booking platform enabling users to browse movies, watch trailers, select seats, and book tickets online. Implemented secure authentication using JWT, built RESTful APIs with Node.js and Express.js, integrated MongoDB for database management, and Razorpay for secure payment processing. Designed a responsive user interface using React and optimized application performance for seamless booking experience.',
     tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    github: 'https://github.com',
-    live: 'https://example.com',
+    github: 'https://github.com/Asit1215/Quick-Show-Again',
+    live: 'https://quickshow-mu-teal.vercel.app/',
   },
-  {
-    title: 'Real-Time Chat App',
-    description: 'Socket.io powered chat with rooms, private messages, and typing indicators. Responsive PWA.',
-    tech: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
-    github: 'https://github.com',
-    live: 'https://example.com',
-  },
-  {
-    title: 'Task Management Dashboard',
-    description: 'Kanban-style project management with drag-and-drop, teams, and real-time updates.',
-    tech: ['React', 'Express', 'PostgreSQL', 'Redis'],
-    github: 'https://github.com',
-    live: 'https://example.com',
-  },
-  {
-    title: 'Developer Portfolio',
-    description: 'Modern animated portfolio with dark theme, Framer Motion, and responsive design.',
-    tech: ['React', 'Tailwind', 'Framer Motion', 'Vite'],
-    github: 'https://github.com',
-    live: 'https://example.com',
-  },
+  
 ]
 
 const cardVariants = {
