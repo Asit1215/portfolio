@@ -43,11 +43,7 @@ export default function About() {
           className="glass mt-12 rounded-2xl p-8 md:p-10"
         >
           <p className="text-slate-300 leading-relaxed md:text-lg">
-            I'm a Full Stack Developer passionate about building scalable web applications
-            and clean user experiences. I specialize in the MERN stack (MongoDB, Express,
-            React, Node.js) and enjoy turning ideas into production-ready software.
-            When I'm not coding, I like to explore new technologies and contribute to
-            open source.
+            Hi, I'm Asit Mandi, a Full Stack Developer specializing in the MERN stack. I build secure, scalable, and performance-driven web applications with modern UI/UX and robust backend architecture. I have hands-on experience in authentication systems, RESTful API development, database optimization, and payment integration. I am passionate about solving real-world problems through clean and efficient code.
           </p>
         </motion.div>
 
