@@ -8,6 +8,13 @@ const projects = [
     github: 'https://github.com/Asit1215/Quick-Show-Again',
     live: 'https://quickshow-mu-teal.vercel.app/',
   },
+  {
+    title: 'Healthcare & Service Appointment Platform (Medicare)',
+    description: 'Medicare is a state-of-the-art, full-stack healthcare management application designed to bridge the gap between patients and medical professionals. The platform provides a seamless experience for users to discover healthcare services, book appointments with specialists, and manage medical visits through a modern digital interface.',
+    tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    github: 'https://github.com/Asit1215/Medicare',
+    live: 'https://medicare-client-0mny.onrender.com/',
+  },
   
 ]
 
