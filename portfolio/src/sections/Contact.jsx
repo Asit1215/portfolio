@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const socials = [
   {
@@ -33,14 +33,39 @@ const socials = [
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [status, setStatus] = useState('idle') // idle | sending | success | error
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Placeholder: send form
+    setStatus('sending')
+    
+    try {
+      // Simulation of a realistic sending delay
+      await new Promise(resolve => setTimeout(resolve, 1500))
+      
+      // If you'd like to use a real service like Web3Forms or EmailJS:
+      // const response = await fetch('https://api.web3forms.com/submit', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({
+      //     access_key: "YOUR_KEY_HERE",
+      //     ...formData
+      //   })
+      // });
+      
+      setStatus('success')
+      setFormData({ name: '', email: '', message: '' })
+      
+      // Reset status after a few seconds
+      setTimeout(() => setStatus('idle'), 5000)
+    } catch (error) {
+      console.error('Submission error:', error)
+      setStatus('error')
+    }
   }
 
   return (
@@ -74,7 +99,8 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-500 outline-none transition focus:border-blue-500/50 focus:bg-white/10"
+                disabled={status === 'sending'}
+                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-500 outline-none transition focus:border-blue-500/50 focus:bg-white/10 disabled:opacity-50"
                 placeholder="Your name"
               />
             </div>
@@ -89,7 +115,8 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-500 outline-none transition focus:border-blue-500/50 focus:bg-white/10"
+                disabled={status === 'sending'}
+                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-500 outline-none transition focus:border-blue-500/50 focus:bg-white/10 disabled:opacity-50"
                 placeholder="you@example.com"
               />
             </div>
@@ -104,18 +131,61 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="w-full resize-none rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-500 outline-none transition focus:border-blue-500/50 focus:bg-white/10"
+                disabled={status === 'sending'}
+                className="w-full resize-none rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-500 outline-none transition focus:border-blue-500/50 focus:bg-white/10 disabled:opacity-50"
                 placeholder="Your message..."
               />
             </div>
-            <motion.button
-              type="submit"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 py-3 font-medium text-white shadow-lg shadow-blue-500/25 transition hover:shadow-blue-500/40"
-            >
-              Send Message
-            </motion.button>
+
+            <div className="relative">
+              <AnimatePresence mode="wait">
+                {status === 'success' ? (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    className="flex items-center justify-center gap-2 rounded-lg bg-green-500/20 py-3 text-green-400 border border-green-500/30"
+                  >
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Message sent successfully!
+                  </motion.div>
+                ) : status === 'error' ? (
+                  <motion.div
+                    key="error"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    className="flex items-center justify-center gap-2 rounded-lg bg-red-400/20 py-3 text-red-400 border border-red-500/20"
+                  >
+                    Something went wrong. Please try again.
+                  </motion.div>
+                ) : (
+                  <motion.button
+                    key="idle"
+                    type="submit"
+                    disabled={status === 'sending'}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 py-3 font-medium text-white shadow-lg shadow-blue-500/25 transition hover:shadow-blue-500/40 disabled:opacity-75 disabled:cursor-not-allowed"
+                  >
+                    <span className={status === 'sending' ? 'opacity-0' : 'opacity-100 transition-opacity'}>
+                      Send Message
+                    </span>
+                    {status === 'sending' && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                      </div>
+                    )}
+                  </motion.button>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
         </motion.form>
 
