@@ -69,18 +69,31 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="glass mt-2 overflow-hidden md:hidden"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="glass mx-4 mt-2 rounded-2xl md:hidden overflow-hidden shadow-2xl"
           >
-            <ul className="flex flex-col gap-2 px-6 py-4">
+            <ul className="flex flex-col space-y-2 px-6 py-8">
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="block py-2 text-slate-400 transition hover:text-white"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setMobileOpen(false);
+                      const target = document.querySelector(link.href);
+                      if (target) {
+                        const offset = 80;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - offset;
+                        window.scrollTo({
+                          top: offsetPosition,
+                          behavior: 'smooth'
+                        });
+                      }
+                    }}
+                    className="block rounded-xl px-4 py-3 text-lg font-medium text-slate-400 transition-all hover:bg-white/10 hover:text-white"
                   >
                     {link.name}
                   </a>
