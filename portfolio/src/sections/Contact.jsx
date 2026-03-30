@@ -42,24 +42,31 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setStatus('sending')
-    
+
+    // Instructions for User:
+    // 1. Go to your Google Sheet > Extensions > Apps Script
+    // 2. Paste the provided Apps Script code and Deploy as Web App
+    // 3. Set 'Who has access' to 'Anyone'
+    // 4. Paste the Web App URL below:
+    // REPLACE THIS with your new Google Apps Script Web App URL
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxDKSM_03roA7YQL5A8Sp9SfvegJBj28pg3E_YpteLap_CH2QnXbS8S2_62mFUZGaRD/exec'
+
     try {
-      // Simulation of a realistic sending delay
-      await new Promise(resolve => setTimeout(resolve, 1500))
-      
-      // If you'd like to use a real service like Web3Forms or EmailJS:
-      // const response = await fetch('https://api.web3forms.com/submit', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({
-      //     access_key: "YOUR_KEY_HERE",
-      //     ...formData
-      //   })
-      // });
-      
+      const params = new URLSearchParams()
+      params.append('name', formData.name)
+      params.append('email', formData.email)
+      params.append('message', formData.message)
+      params.append('Date', new Date().toLocaleString())
+
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: params,
+        mode: 'no-cors'
+      })
+
       setStatus('success')
       setFormData({ name: '', email: '', message: '' })
-      
+
       // Reset status after a few seconds
       setTimeout(() => setStatus('idle'), 5000)
     } catch (error) {
@@ -69,8 +76,12 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="scroll-mt-20 bg-dark-900 py-24 px-6">
-      <div className="mx-auto max-w-3xl">
+    <section id="contact" className="relative scroll-mt-20 overflow-hidden bg-dark-900 py-24 px-6">
+      {/* Decorative Background Elements */}
+      <div className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 animate-float rounded-full bg-blue-600/10 blur-[100px]" />
+      <div className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 animate-float rounded-full bg-purple-600/10 blur-[100px]" style={{ animationDelay: '-4s' }} />
+
+      <div className="relative mx-auto max-w-3xl">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -100,7 +111,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 disabled={status === 'sending'}
-                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-500 outline-none transition focus:border-blue-500/50 focus:bg-white/10 disabled:opacity-50"
+                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-500 input-focus disabled:opacity-50"
                 placeholder="Your name"
               />
             </div>
@@ -116,7 +127,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 disabled={status === 'sending'}
-                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-500 outline-none transition focus:border-blue-500/50 focus:bg-white/10 disabled:opacity-50"
+                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-500 input-focus disabled:opacity-50"
                 placeholder="you@example.com"
               />
             </div>
@@ -132,7 +143,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 disabled={status === 'sending'}
-                className="w-full resize-none rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-500 outline-none transition focus:border-blue-500/50 focus:bg-white/10 disabled:opacity-50"
+                className="w-full resize-none rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-500 input-focus disabled:opacity-50"
                 placeholder="Your message..."
               />
             </div>
@@ -145,7 +156,7 @@ export default function Contact() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
-                    className="flex items-center justify-center gap-2 rounded-lg bg-green-500/20 py-3 text-green-400 border border-green-500/30"
+                    className="flex items-center justify-center gap-2 rounded-lg bg-green-500/20 py-3 text-green-400 border border-green-500/30 shadow-[0_0_20px_rgba(34,197,94,0.2)]"
                   >
                     <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />

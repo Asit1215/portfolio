@@ -40,19 +40,46 @@ body {
 
 /* Glassmorphism base */
 .glass {
-  @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl;
+}
+
+.glass-hover {
+  @apply transition-all duration-300;
 }
 
 .glass-hover:hover {
-  @apply bg-white/10 border-white/20 shadow-lg shadow-blue-500/5;
+  @apply bg-white/10 border-white/20 shadow-blue-500/10 -translate-y-1;
+}
+
+/* Premium Input Focus */
+.input-focus {
+  @apply transition-all duration-300 outline-none;
+}
+
+.input-focus:focus {
+  @apply border-blue-500/50 bg-white/10 ring-4 ring-blue-500/10 shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)];
 }
 
 /* Gradient text */
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-[length:200%_auto] animate-[gradient_3s_linear_infinite];
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-[length:200%_auto] animate-gradient;
 }
 
 @keyframes gradient {
-  0%, 100% { background-position: 0% center; }
+  0% { background-position: 0% center; }
   50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+.animate-gradient {
+  animation: gradient 4s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
 }
