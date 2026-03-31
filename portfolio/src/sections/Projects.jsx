@@ -15,6 +15,13 @@ const projects = [
     github: 'https://github.com/Asit1215/Medicare',
     live: 'https://medicare-client-0mny.onrender.com/',
   },
+  {
+    title: 'Coffee-House',
+    description: 'A Premium Responsive Website A modern, highly responsive landing page for a fictional coffee shop, built with HTML, CSS, and JavaScript. This project focuses on high-quality visuals, smooth animations, and a seamless user experience across all devices.',
+    tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    github: 'https://github.com/Asit1215/Coffee',
+    live: 'https://coffee-neon-eight-11.vercel.app/',
+  },
   
 ]
 
