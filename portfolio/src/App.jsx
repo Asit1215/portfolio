@@ -5,6 +5,7 @@ import Loading from './components/Loading'
 import Navbar from './components/Navbar'
 import Hero from './sections/Hero'
 import About from './sections/About'
+import Qualification from './sections/Qualification'
 import Projects from './sections/Projects'
 import Skills from './sections/Skills'
 import Contact from './sections/Contact'
@@ -43,6 +44,7 @@ function App() {
             <main>
               <Hero />
               <About />
+              <Qualification />
               <Projects />
               <Skills />
               <Contact />
