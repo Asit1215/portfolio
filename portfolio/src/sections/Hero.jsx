@@ -21,7 +21,7 @@ export default function Hero() {
             <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-60 blur-sm" />
             <img
               src="/profile.png"
-              alt="Asit Mandi"
+              alt="Asit"
               className="relative h-32 w-32 rounded-full object-cover ring-2 ring-white/20 ring-offset-2 ring-offset-dark-900 md:h-40 md:w-40"
             />
           </div>
@@ -43,11 +43,11 @@ export default function Hero() {
         >
           <TypeAnimation
             sequence={[
-              "Hi, I'm Asit Mandi",
+              "Hi, I'm Asit",
               1500,
               "I'm a Software Developer",
               1500,
-              "Hi, I'm Asit Mandi",
+              "Hi, I'm Asit",
               Infinity,
             ]}
             wrapper="h1"

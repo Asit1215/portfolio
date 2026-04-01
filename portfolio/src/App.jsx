@@ -22,9 +22,9 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>Asit Mandi | Full Stack Developer</title>
+        <title>Asit | Full Stack Developer</title>
         <meta name="description" content="Full Stack Developer specializing in Node.js, React.js, and MongoDB. Building modern web applications." />
-        <meta property="og:title" content="Asit Mandi | Full Stack Developer" />
+        <meta property="og:title" content="Asit | Full Stack Developer" />
         <meta property="og:description" content="Full Stack Developer | Node.js | React.js | MongoDB" />
         <link rel="canonical" href="https://asitmandi.dev" />
       </Helmet>

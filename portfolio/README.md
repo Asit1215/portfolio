@@ -1,4 +1,4 @@
-# Asit Mandi – Developer Portfolio
+# Asit – Developer Portfolio
 
 A modern, fully responsive animated portfolio built with **React**, **Tailwind CSS**, and **Framer Motion**.
 

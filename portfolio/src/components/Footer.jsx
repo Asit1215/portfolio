@@ -12,7 +12,7 @@ export default function Footer() {
     >
       <div className="mx-auto max-w-6xl px-6 text-center">
         <p className="text-slate-500 text-sm">
-          © {year} Asit Mandi. Built with React, Tailwind & Framer Motion.
+          © {year} Asit. Built with React, Tailwind & Framer Motion.
         </p>
       </div>
     </motion.footer>
