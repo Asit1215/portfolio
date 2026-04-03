@@ -4,7 +4,7 @@ const qualifications = [
   {
     title: 'Master of Business Administration (MBA)',
     institution: 'Brainware University',
-    location: 'Barasat, West Bengal',
+    location: 'Barasat, Kolkata, West Bengal',
     link: 'https://www.brainwareuniversity.ac.in',
     duration: '2025 - 2027 (2 Years Pursuing)',
     description: 'Expanding my skill set into Strategic Management and Operations. My goal is to bridge the gap between technical execution and business leadership, focusing on Marketing Analytics and Organizational Behavior.',
@@ -22,7 +22,7 @@ const qualifications = [
   {
     title: 'Bachelor of Technology (B-Tech CSE)',
     institution: 'Brainware University',
-    location: 'Barasat, West Bengal',
+    location: 'Barasat, Kolkata, West Bengal',
     link: 'https://www.brainwareuniversity.ac.in',
     duration: '2022 - 2025 (3 Years)',
     description: 'Advanced my technical expertise with subjects like Advance DBMS and Design & Analysis of Algorithms. I developed a deep understanding of software engineering principles and computer organization for building high-performance systems.',
@@ -31,7 +31,7 @@ const qualifications = [
   {
     title: 'Diploma in Computer Science',
     institution: 'Brainware University',
-    location: 'Barasat, West Bengal',
+    location: 'Barasat, Kolkata, West Bengal',
     link: 'https://www.brainwareuniversity.ac.in',
     duration: '2019 - 2022 (3 Years)',
     description: 'Established a strong foundation in computer science and programming. This course provided me with crucial knowledge in Object-Oriented Programming, Data Structures, Operating Systems, and Networking.',
@@ -49,7 +49,7 @@ const qualifications = [
   {
     title: 'Higher Secondary (HS)',
     institution: 'Ujan Haripada High School (WBSCTVESD)',
-    location: 'Pachime Medinipur, 721140',
+    location: 'Paschime Medinipur, 721140',
     link: 'https://in.worldorgs.com/catalog/ujan/high-school/ujan-haripada-high-school-hs',
     duration: '2017 - 2019 (2 Years)',
     description: 'Vocational specialization in Computer Science provided my first formal training in tech. It allowed me to explore hardware systems and basic programming, setting the stage for my future career.',
@@ -58,7 +58,7 @@ const qualifications = [
   {
     title: 'Madhyamik (X)',
     institution: 'Ujan Haripada High School (WBBSE)',
-    location: 'Pachime Medinipur, 721140',
+    location: 'Ujan, SPaschime Medinipur, 721140',
     link: 'https://in.worldorgs.com/catalog/ujan/high-school/ujan-haripada-high-school-hs',
     duration: '2015 - 2017 (2 Years)',
     description: 'Completed Secondary Education under the West Bengal Board of Secondary Education, establishing clear logical and analytical thinking foundation across various scientific and mathematical disciplines.',
@@ -98,9 +98,8 @@ export default function Qualification() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`relative flex flex-col items-start md:items-center gap-8 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
+                className={`relative flex flex-col items-start md:items-center gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  }`}
               >
                 {/* Content Card */}
                 <div className={`w-full md:w-1/2 pl-12 md:pl-0 ${index % 2 === 0 ? 'md:text-right md:pr-12' : 'md:text-left md:pl-12'}`}>
@@ -109,15 +108,15 @@ export default function Qualification() {
                       {q.duration}
                     </span>
                     <h3 className="text-lg sm:text-xl font-bold text-white mb-1 leading-tight">{q.title}</h3>
-                    
+
                     <div className={`flex flex-wrap items-center gap-x-4 gap-y-2 mb-4 text-[11px] sm:text-sm ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
-                      <a 
-                        href={q.link} 
-                        target="_blank" 
+                      <a
+                        href={q.link}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-purple-400 font-medium hover:text-purple-300 transition-colors flex items-center gap-1.5 group"
                       >
-                         <span className="group-hover:underline">{q.institution}</span>
+                        <span className="group-hover:underline">{q.institution}</span>
                         <svg className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
