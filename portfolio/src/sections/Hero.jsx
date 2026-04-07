@@ -73,7 +73,7 @@ export default function Hero() {
           className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
           <a
-            href="#projects"
+            href="#work"
             className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 font-medium text-white shadow-lg shadow-blue-500/25 transition hover:shadow-blue-500/40 hover:shadow-xl"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 transition group-hover:opacity-100" />
