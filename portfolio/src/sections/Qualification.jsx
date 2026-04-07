@@ -20,7 +20,7 @@ const qualifications = [
     icon: '🐍'
   },
   {
-    title: 'Bachelor of Technology (B-Tech CSE)',
+    title: 'B-Tech CSE',
     institution: 'Brainware University',
     location: 'Barasat, Kolkata, West Bengal',
     link: 'https://www.brainwareuniversity.ac.in',
