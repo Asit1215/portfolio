@@ -6,7 +6,7 @@ const qualifications = [
     institution: 'Brainware University',
     location: 'Barasat, Kolkata, West Bengal',
     link: 'https://www.brainwareuniversity.ac.in',
-    duration: '2025 - 2027 (2 Years Pursuing)',
+    duration: '2026 - 2028 (2 Years Pursuing)',
     description: 'Expanding my skill set into Strategic Management and Operations. My goal is to bridge the gap between technical execution and business leadership, focusing on Marketing Analytics and Organizational Behavior.',
     icon: '📈'
   },
@@ -15,7 +15,7 @@ const qualifications = [
     institution: 'Webguru Infosys Pvt Ltd',
     location: 'Bidhannagar, Kolkata',
     link: 'https://www.webguru-india.com',
-    duration: '2024 (6 Months during B-Tech)',
+    duration: '2025 (6 Months during B-Tech)',
     description: 'During my internship at Webguru Infosys, I developed production-ready web applications using Python and Django. I gained hands-on experience in building RESTful APIs, database optimization, and collaborating on professional backend architectures.',
     icon: '🐍'
   },
@@ -24,7 +24,7 @@ const qualifications = [
     institution: 'Brainware University',
     location: 'Barasat, Kolkata, West Bengal',
     link: 'https://www.brainwareuniversity.ac.in',
-    duration: '2022 - 2025 (3 Years)',
+    duration: '2023 - 2026 (3 Years)',
     description: 'Advanced my technical expertise with subjects like Advance DBMS and Design & Analysis of Algorithms. I developed a deep understanding of software engineering principles and computer organization for building high-performance systems.',
     icon: '🖥️'
   },
@@ -33,7 +33,7 @@ const qualifications = [
     institution: 'Brainware University',
     location: 'Barasat, Kolkata, West Bengal',
     link: 'https://www.brainwareuniversity.ac.in',
-    duration: '2019 - 2022 (3 Years)',
+    duration: '2020 - 2023 (3 Years)',
     description: 'Established a strong foundation in computer science and programming. This course provided me with crucial knowledge in Object-Oriented Programming, Data Structures, Operating Systems, and Networking.',
     icon: '💻'
   },
@@ -51,7 +51,7 @@ const qualifications = [
     institution: 'Ujan Haripada High School (WBSCTVESD)',
     location: 'Paschime Medinipur, 721140',
     link: 'https://in.worldorgs.com/catalog/ujan/high-school/ujan-haripada-high-school-hs',
-    duration: '2017 - 2019 (2 Years)',
+    duration: '2018 - 2020 (2 Years)',
     description: 'Vocational specialization in Computer Science provided my first formal training in tech. It allowed me to explore hardware systems and basic programming, setting the stage for my future career.',
     icon: '⌨️'
   },
@@ -60,7 +60,7 @@ const qualifications = [
     institution: 'Ujan Haripada High School (WBBSE)',
     location: 'Ujan, SPaschime Medinipur, 721140',
     link: 'https://in.worldorgs.com/catalog/ujan/high-school/ujan-haripada-high-school-hs',
-    duration: '2015 - 2017 (2 Years)',
+    duration: '2016 - 2018 (2 Years)',
     description: 'Completed Secondary Education under the West Bengal Board of Secondary Education, establishing clear logical and analytical thinking foundation across various scientific and mathematical disciplines.',
     icon: '🏫'
   },

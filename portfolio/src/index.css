@@ -83,3 +83,15 @@ body {
 .animate-float {
   animation: float 8s ease-in-out infinite;
 }
+
+.btn-primary {
+  @apply rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 sm:px-9 sm:py-3.5 font-bold text-white 
+  transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] active:scale-95 
+  inline-flex items-center justify-center gap-2 text-sm sm:text-base whitespace-nowrap;
+}
+
+.btn-outline {
+  @apply rounded-xl border border-white/10 bg-white/5 px-6 py-3 sm:px-8 sm:py-3.5 font-bold text-white 
+  transition-all hover:bg-white/10 hover:border-blue-500/30 hover:shadow-[0_0_25px_rgba(59,130,246,0.1)] 
+  active:scale-95 inline-flex items-center justify-center gap-2 text-sm sm:text-base whitespace-nowrap;
+}
