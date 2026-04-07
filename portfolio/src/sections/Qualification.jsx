@@ -29,7 +29,7 @@ const qualifications = [
     icon: '🖥️'
   },
   {
-    title: 'Diploma in Computer Science',
+    title: 'Diploma in Computer Science & Engineering',
     institution: 'Brainware University',
     location: 'Barasat, Kolkata, West Bengal',
     link: 'https://www.brainwareuniversity.ac.in',
