@@ -6,7 +6,7 @@ const projects = [
     description: 'Developed a full-stack movie ticket booking platform enabling users to browse movies, watch trailers, select seats, and book tickets online. Implemented secure authentication using JWT, built RESTful APIs with Node.js and Express.js, integrated MongoDB for database management, and Razorpay for secure payment processing.',
     image: '/quickshow_mockup.png',
     link: 'https://quickshow-mu-teal.vercel.app/',
-    github: 'https://github.com/Asit1215/QuickShow',
+    github: 'https://github.com/Asit1215/Quick-Show-Again',
     tags: ['React', 'Node.js', 'MongoDB', 'Razorpay']
   },
   {
@@ -22,7 +22,7 @@ const projects = [
     description: 'A Premium Responsive Website. A modern, highly responsive landing page for a fictional coffee shop. This project focuses on high-quality visuals, smooth animations, and a seamless user experience across all devices.',
     image: '/coffeehouse_mockup.png',
     link: 'https://coffee-neon-eight-11.vercel.app/',
-    github: 'https://github.com/Asit1215/Coffee-House',
+    github: 'https://github.com/Asit1215/Coffee',
     tags: ['Next.js', 'Tailwind', 'Framer Motion']
   },
 ]
@@ -57,14 +57,14 @@ export default function Projects() {
               className="glass glass-hover group overflow-hidden rounded-2xl flex flex-col"
             >
               <div className="relative aspect-video overflow-hidden">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </div>
-              
+
               <div className="p-6 flex flex-col flex-1">
                 <div className="mb-4 flex flex-wrap gap-2">
                   {project.tags?.map(tag => (
@@ -80,7 +80,7 @@ export default function Projects() {
                   {project.description}
                 </p>
                 <div className="mt-auto flex flex-wrap gap-4">
-                  <a 
+                  <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -88,7 +88,7 @@ export default function Projects() {
                   >
                     GitHub
                   </a>
-                  <a 
+                  <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
